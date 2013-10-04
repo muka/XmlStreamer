@@ -1,6 +1,7 @@
 {
     "name": "pwerk/xmlstreamer",
     "description": "Helper class to parse XML files",
+    "version": "1.0",
     "authors": [
         {
             "name": "pwerk",
