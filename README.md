@@ -1,16 +1,19 @@
-=XmlStreamer=
+XmlStreamer
+=============
 
 oskar.thornblad@gmail.com
 
 Contributions from: Valiton GmbH
 
 Free for everyone for everything, attribution voluntary
-------
 
-==Usage:==
+
+Usage:
+------
 Extend the class and implement the processNode method.
 
-==Example:==
+Example:
+------
 ```php
 class SimpleXmlStreamer extends XmlStreamer {
 	public function processNode($xmlString, $elementName, $nodeIndex) {
