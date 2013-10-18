@@ -8,13 +8,13 @@ namespace pwerk\XmlStreamer;
 // extended by Valiton GmbH, SEP/2012
 
 abstract class XmlStreamer {
-    private $handle;
-    private $totalBytes;
-    private $readBytes = 0;
-    private $nodeIndex = 0;
-    private $chunk = "";
-    private $chunkSize;
-    private $readFromChunkPos;
+    protected $handle;
+    protected $totalBytes;
+    protected $readBytes = 0;
+    protected $nodeIndex = 0;
+    protected $chunk = "";
+    protected $chunkSize;
+    protected $readFromChunkPos;
 
     private $rootNode;
     private $customRootNode;
@@ -237,11 +237,11 @@ abstract class XmlStreamer {
         return isset($this->rootNode);
     }
 
-    private function closeHandle() {
+    protected function closeHandle() {
         fclose($this->handle);
     }
 
-    private function readNextChunk() {
+    protected function readNextChunk() {
 
         $this->chunk .= fread($this->handle, $this->chunkSize);
         $this->readBytes += $this->chunkSize;
