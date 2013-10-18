@@ -232,7 +232,12 @@ abstract class XmlStreamer {
                 }
             }
         }
+
+        $this->closeHandle();
         return isset($this->rootNode);
+    }
+
+    private function closeHandle() {
         fclose($this->handle);
     }
 
