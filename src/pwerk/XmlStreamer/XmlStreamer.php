@@ -27,6 +27,14 @@ abstract class XmlStreamer {
     */
     public function __construct($mixed, $chunkSize = 16384, $customRootNode = null, $totalBytes = null, $customChildNode = null) {
         if (is_string($mixed)) {
+
+            if(!file_exists($mixed)) {
+                throw new \Exception("File does not exists.");
+            }
+            if(!is_readable($mixed)) {
+                throw new \Exception("File is not readable.");
+            }
+
             $this->handle = fopen($mixed, "r");
             if (isset($totalBytes)) {
                 $this->totalBytes = $totalBytes;
