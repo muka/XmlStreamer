@@ -16,8 +16,8 @@ abstract class XmlStreamer {
     protected $chunkSize;
     protected $readFromChunkPos;
 
-    private $rootNode;
-    private $customRootNode;
+    protected $rootNode;
+    protected $customRootNode;
 
     /**
     * @param $mixed             Path to XML file OR file handle
